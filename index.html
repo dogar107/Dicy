@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Dice New Game</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+
+  <div class="me">
+    <h1 class="heading" id="heading">🎲 Dice Game</h1>
+    <button class="logout" id="quit">
+      <span class="material-symbols-outlined">logout</span>
+    </button>
+    </div>
+  
+
+  
+  <div id="btn">
+    <button class="btn1" id="rollbtn">Roll Dice</button>
+    <button class="btn2" id="reset">Reset</button>
+
+    <div class="totalscore" id="totalscore">
+      <h1 class="total" id="total">Total Score:</h1>
+      <h2 id="score" class="score">0</h2>
+      <h3 class="level" style="color: whitesmoke;" id="level">Level:</h3>
+      <h4 id="levelscore" class="levelscore" style="color: whitesmoke;"></h4>
+    </div>
+
+    <p class="p2" id="p2">🔴 Red shows you are in danger</p>
+
+    <div class="dice" id="empty"></div>
+
+    <div id="dice0" class="dice firstface">
+      <span class="dot center"></span>
+    </div>
+
+    <div id="dice1" class="dice secondface">
+      <span class="dot top-left"></span>
+      <span class="dot bottom-right"></span>
+    </div>
+
+    <div id="dice2" class="dice thirdface">
+      <span class="dot top-left"></span>
+      <span class="dot center"></span>
+      <span class="dot bottom-right"></span>
+    </div>
+
+    <div id="dice3" class="dice fourthface">
+      <span class="dot top-left"></span>
+      <span class="dot top-right"></span>
+      <span class="dot bottom-left"></span>
+      <span class="dot bottom-right"></span>
+    </div>
+
+    <div id="dice4" class="dice fifthface">
+      <span class="dot top-left"></span>
+      <span class="dot top-right"></span>
+      <span class="dot center"></span>
+      <span class="dot bottom-left"></span>
+      <span class="dot bottom-right"></span>
+    </div>
+
+    <div id="dice5" class="dice sixthface">
+      <span class="dot top-left"></span>
+      <span class="dot top-right"></span>
+      <span class="dot center-left"></span>
+      <span class="dot center-right"></span>
+      <span class="dot bottom-left"></span>
+      <span class="dot bottom-right"></span>
+    </div>
+  </div>
+
+  
+  <div id="snackbar"></div>
+  <div class="boards" id="boards">
+ 
+   
+    <div id="customAlert" class="alert-hidden">
+      <p id="alertMessage">🎮 Game Over! <br> Do you want to play again</p>
+      <button id="okBtn">OK</button>
+      <button id="cancelBtn">Cancel</button>
+    </div>
+
+
+  <div id="customAlert1" class="alert-hidden">
+      <div class="bg">
+      <h1 id="alertMessage1" >🎲 Dice Game</h1>
+      <p class="p9">Dice Game is a nice game for beginners to play!</p>
+      <button id="startBtn">Start</button>  
+    </div>
+    </div>
+    
+    <div class="board" id="ii">
+      <div class="Circle" id="circle"></div>
+      <ul class="box-list">
+</ul>
+
+    </div>
+  </div>
+  <div class="footer">
+    <p>@2025 Dice Game All Right Reserved</p>
+    </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
