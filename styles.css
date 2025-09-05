@@ -492,3 +492,7 @@ background-color: red;
 .hidden{
 display:none;
 }
+
+.start {
+background-color: gold;
+}
