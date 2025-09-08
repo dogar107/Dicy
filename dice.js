@@ -154,8 +154,7 @@ function updateVisibleBoxes(level) {
   let maxIndex = 11; 
   if (level === 2) {
   maxIndex = 23;
-}
-  else if (level === 3){ 
+}else if (level === 3){ 
   maxIndex = 35;
 }else if (level === 4) {
   maxIndex = 41;
