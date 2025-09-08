@@ -175,37 +175,16 @@ boxlist.appendChild(allBoxes[i]);
 
 function updateLevel(pos) {
  let level = "";
- if (pos === 31){
+ if (pos === 31 || pos >= 31){
  level = 4;
  }
- if(pos >= 31){
- resetGame();
- game.reset();
- showToast("Game Over!☠️");
- scoreEl.textContent = "0";
- Level.textContent = "";
- gameStarted=false;
- }
- if(pos === 21){
+ if(pos === 21 || pos>=21){
  level = 3;
  }
- if(pos >= 21){
- resetGame();
- game.reset();
- showToast("Game Over!☠️");
-  scoreEl.textContent = "0";
-  Level.textContent = "";
-  gameStarted=false;
- }
  
- if(pos === 11){
+ if(pos === 11 || pos >= 11){
  level = 2;
  }
-  if(pos >= 11){
-  showToast("Game Over!☠️");
-  scoreEl.textContent = "0";
-  Level.innerHTML = "";
-  }
   if(pos === 0){
   level = 1;
   }else{
