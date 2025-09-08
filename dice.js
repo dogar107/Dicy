@@ -1,3 +1,5 @@
+
+
 class Dice {
   score = 0;
   getScore() {
@@ -48,10 +50,14 @@ for(let i = 0; i < totalboxes; i++){
 }
 
 const allBoxes = boxes;
+
+updateVisibleBoxes(1)
+
 customAlert1.style.display = "block";
 
 startBtn.onclick = () => {
   customAlert1.style.display = "none";
+
   updateVisibleBoxes(1, position);
 };
 
@@ -78,8 +84,9 @@ rollBtn.addEventListener("click", () => {
       gameStarted = true;
       position = 0;
       scoreEl.textContent = "0";
+      Level.textContent = "1";
       circleDiv.style.display = "block";
-      updateVisibleBoxes(1, position);
+      updateVisibleBoxes(1);
     } else {
       for (let j = 0; j < 6; j++) {
         const el = document.getElementById(`dice${j}`);
@@ -125,14 +132,14 @@ rollBtn.addEventListener("click", () => {
   boxes[Pos].classList.add("trap");
   showToast("Oh no! You hit on trap!");
   circleDiv.style.display="none";
-  scoreEl.textContent = "0";
+    scoreEl.textContent = "0";
   Level.textContent = "";
   gameStarted=false;
- 
   setTimeout(()=>{
   boxes[Pos].classList.remove("trap");
   resetGame();
   game.reset();
+
   }, 1000)
   }
   })
@@ -151,43 +158,35 @@ rollBtn.addEventListener("click", () => {
 });
 
 function updateVisibleBoxes(level) {
+
   let maxIndex = 11; 
   if (level === 2) {
-  maxIndex = 23;
-}else if (level === 3){ 
-  maxIndex = 35;
+  maxIndex = 21;
+}
+  else if (level === 3){ 
+  maxIndex = 31;
 }else if (level === 4) {
   maxIndex = 41;
 }
-for (let i = 0; i < allBoxes.length; i++) {
+
 allBoxes.forEach((box, index) => {
   if(index <= maxIndex){
-  box.classList.remove("hidden");
+  box.style.display="block";
   }else{
-  box.classList.add("hidden");
+  box.style.display="none";
   }
-});
-boxlist.appendChild(allBoxes[i]);
+  });
 }
-}
-
 
 function updateLevel(pos) {
- let level = "";
- if (pos === 31 || pos >= 31){
- level = 4;
- }
- if(pos === 21 || pos>=21){
- level = 3;
- }
- 
- if(pos === 11 || pos >= 11){
- level = 2;
- }
-  if(pos === 0){
-  level = 1;
-  }else{
-  level="";
+  let level = 1;
+
+  if (pos === 31 ) {
+    level = 4;
+  } else if (pos === 21) {
+    level = 3;
+  } else if (pos === 11) {
+    level = 2; 
   }
 
   Level.textContent = level;
