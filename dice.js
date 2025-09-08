@@ -52,8 +52,7 @@ customAlert1.style.display = "block";
 
 startBtn.onclick = () => {
   customAlert1.style.display = "none";
-
-  updateVisibleBoxes(1, position);
+ updateVisibleBoxes(1,position)
 };
 
 quit.onclick = () => {
@@ -122,17 +121,22 @@ rollBtn.addEventListener("click", () => {
     }
   }
 
-  trapsPositions.forEach(Pos =>{
-  if( position === Pos){
-  boxes[Pos].classList.add("trap");
-  showToast("Oh no! You hit on trap!");
-  circleDiv.style.display="none";
-  scoreEl.textContent = "0";
-  Level.textContent = "";
-  gameStarted=false;
-  resetGame();
-  game.reset();
+trapsPositions.forEach(Pos => {
+  if (position === Pos) {
+    boxes[Pos].classList.add("trap");
+    boxes[Pos].className="red";
+    showToast("Oh no! You hit on trap!");
+    circleDiv.style.display = "none";
+    scoreEl.textContent = "0";
+    Level.textContent = "";
+    gameStarted = false;
+    setTimeout(() => {
+      boxes[Pos].classList.remove("trap");
+      resetGame();
+      game.reset();
+    }, 1000);
   }
+});
 
   if(position===41){
   showToast("Congratulations! You Win 🏆");
@@ -148,7 +152,6 @@ rollBtn.addEventListener("click", () => {
 });
 
 function updateVisibleBoxes(level) {
- boxlist.innerHTML = "";
 
   let maxIndex = 11; 
   if (level === 2) {
@@ -186,7 +189,7 @@ function updateLevel(pos) {
   Level.textContent = level;
   updateVisibleBoxes(level, pos);
 }
-})
+
 function showToast(message) {
   const x = document.getElementById("snackbar");
   x.textContent = message;

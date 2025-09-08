@@ -472,8 +472,12 @@ top: 0px;
 position: relative;
 }
 
-.trap {
+.red {
 border: 2px dashed red;
+}
+
+.trap{
+background-color: red;
 }
 
 .footer{
@@ -492,3 +496,5 @@ border: 2px dashed red;
 .hidden{
 display:none;
 }
+
+
