@@ -474,11 +474,26 @@ position: relative;
 
 .red {
 border: 2px dashed red;
+  width: 64px;
+  height: 64px;
+  background: gray;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    text-align: center;
+    line-height: 60px;
+    transition: background-color 0.5s ease;
+
 }
 
 .trap{
 background-color: red;
-border: 2px dashed red;
 }
 
 .footer{
