@@ -200,15 +200,15 @@ function updateLevel(pos) {
   
  }
  
- if(pos === 10){
+ if(pos === 11){
  level = 2;
  }
- if(pos >= 10){
+ if(pos >= 11){
   resetGame();
   game.reset();
  showToast("Game Over!☠️");
   scoreEl.textContent = "0";
-  Level.textContent = "";
+  Level.innerHTML = "";
   gameStarted=false;
  }
   if(pos === 0){
