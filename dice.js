@@ -176,17 +176,16 @@ boxlist.appendChild(allBoxes[i]);
 
 
 function updateLevel(pos) {
-  let level = "";
+  let level = 1;
   switch (pos){
-  case pos === 10 || pos > 10:
+  case pos === 11||pos >= 11:
   level = 1;
   break;
-  case pos === 20 || pos > 20:
+  case pos === 21||pos >= 21:
   level = 2;
   break;
-  case pos === 30 || pos > 30:
+  case pos === 31||pos >= 31:
   level = 3;
-  break;
   }
 
   Level.textContent = level;
