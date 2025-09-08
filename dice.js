@@ -176,7 +176,7 @@ boxlist.appendChild(allBoxes[i]);
 
 
 function updateLevel(pos) {
-  let level = 0;
+  let level = "";
   switch (pos){
   case pos === 10 || pos > 10:
   level = 1;
