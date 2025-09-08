@@ -1,5 +1,3 @@
-
-
 class Dice {
   score = 0;
   getScore() {
@@ -50,9 +48,6 @@ for(let i = 0; i < totalboxes; i++){
 }
 
 const allBoxes = boxes;
-
-updateVisibleBoxes(1)
-
 customAlert1.style.display = "block";
 
 startBtn.onclick = () => {
@@ -86,7 +81,7 @@ rollBtn.addEventListener("click", () => {
       scoreEl.textContent = "0";
       Level.textContent = "1";
       circleDiv.style.display = "block";
-      updateVisibleBoxes(1);
+      updateVisibleBoxes(1, position);
     } else {
       for (let j = 0; j < 6; j++) {
         const el = document.getElementById(`dice${j}`);
@@ -132,14 +127,14 @@ rollBtn.addEventListener("click", () => {
   boxes[Pos].classList.add("trap");
   showToast("Oh no! You hit on trap!");
   circleDiv.style.display="none";
-    scoreEl.textContent = "0";
+  scoreEl.textContent = "0";
   Level.textContent = "";
   gameStarted=false;
+ 
   setTimeout(()=>{
   boxes[Pos].classList.remove("trap");
   resetGame();
   game.reset();
-
   }, 1000)
   }
   })
@@ -158,35 +153,39 @@ rollBtn.addEventListener("click", () => {
 });
 
 function updateVisibleBoxes(level) {
+ boxlist.innerHTML = "";
 
   let maxIndex = 11; 
   if (level === 2) {
-  maxIndex = 21;
+  maxIndex = 23;
 }
   else if (level === 3){ 
-  maxIndex = 31;
+  maxIndex = 35;
 }else if (level === 4) {
   maxIndex = 41;
 }
-
+for (let i = 0; i < allBoxes.length; i++) {
 allBoxes.forEach((box, index) => {
   if(index <= maxIndex){
-  box.style.display="block";
+  box.classList.remove("hidden");
   }else{
-  box.style.display="none";
+  box.classList.add("hidden");
   }
-  });
+});
+boxlist.appendChild(allBoxes[i]);
 }
+}
+
 
 function updateLevel(pos) {
   let level = 1;
 
-  if (pos === 31 ) {
+  if (pos === 35 || pos > 35) {
     level = 4;
-  } else if (pos === 21) {
+  } else if (pos === 23 || pos > 23) {
     level = 3;
-  } else if (pos === 11) {
-    level = 2; 
+  } else if (pos === 11 || pos > 11) {
+    level = 2;
   }
 
   Level.textContent = level;
