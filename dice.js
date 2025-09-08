@@ -178,37 +178,26 @@ function updateLevel(pos) {
  if (pos === 31){
  level = 4;
  }
- if(pos >= 31){
- resetGame();
- game.reset();
- showToast("Game Over!☠️");
- scoreEl.textContent = "0";
- Level.textContent = "";
- gameStarted=false;
- }
+
  if(pos === 21){
  level = 3;
  }
- if(pos >= 21){
- resetGame();
- game.reset();
+ if(pos >= 21 && pos >= 31 || pos>=11 ){
  showToast("Game Over!☠️");
   scoreEl.textContent = "0";
   Level.textContent = "";
   gameStarted=false;
+  boxes[pos].classList.add("reach");
+  setTimeout(()=>{
+  boxes[pos].classList.remove("reach");
+  resetGame();
+  game.reset();
+  },1000)
  }
  
  if(pos === 11){
  level = 2;
  }
-  if(pos >= 11){
-  resetGame();
-  game.reset();
-  showToast("Game Over!☠️");
-  scoreEl.textContent = "0";
-  Level.innerHTML = "";
-  gameStarted=false;
-  }
   if(pos === 0){
   level = 1;
   }else{
