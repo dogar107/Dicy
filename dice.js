@@ -176,17 +176,14 @@ boxlist.appendChild(allBoxes[i]);
 
 
 function updateLevel(pos) {;
-  switch (pos){
-  case pos === 11||pos >= 11:
-  level = 2;
-  case pos === 21||pos >= 21:
-  level = 3;
-  case pos === 31||pos >= 31:
-  level = 4;
-  break;
-  default:
-  level = 1;
-  }
+ let level = 1;
+ if (pos === 31 || pos >= 31){
+ level = 4;
+ }else if(pos === 21 || pos >= 21){
+ level = 3;
+ }else if(pos === 11 || pos >= 11){
+ level = 2;
+ }
 
   Level.textContent = level;
   updateVisibleBoxes(level, pos);
