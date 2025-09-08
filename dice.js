@@ -52,8 +52,7 @@ customAlert1.style.display = "block";
 
 startBtn.onclick = () => {
   customAlert1.style.display = "none";
-
-  updateVisibleBoxes(1, pos);
+  updateVisibleBoxes(1, position);
 };
 
 quit.onclick = () => {
@@ -67,7 +66,7 @@ function resetGame() {
   gameStarted = false;
   scoreEl.textContent = "0";
   Level.textContent = "";
-  updateVisibleBoxes(1, pos);
+  updateVisibleBoxes(1, position);
 }
 resetbtn.addEventListener("click", resetGame);
 
@@ -80,7 +79,7 @@ rollBtn.addEventListener("click", () => {
       position = 0;
       scoreEl.textContent = "0";
       circleDiv.style.display = "block";
-      updateVisibleBoxes(1, pos);
+      updateVisibleBoxes(1, position);
     } else {
       for (let j = 0; j < 6; j++) {
         const el = document.getElementById(`dice${j}`);
