@@ -179,13 +179,13 @@ function updateLevel(pos) {
   let level = 1;
   switch (pos){
   case pos === 11||pos >= 11:
-  level = 1;
-  break;
-  case pos === 21||pos >= 21:
   level = 2;
   break;
-  case pos === 31||pos >= 31:
+  case pos === 21||pos >= 21:
   level = 3;
+  break;
+  case pos === 31||pos >= 31:
+  level = 4;
   }
 
   Level.textContent = level;
