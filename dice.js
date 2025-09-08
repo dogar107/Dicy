@@ -180,10 +180,8 @@ function updateLevel(pos) {
   switch (pos){
   case pos === 11||pos >= 11:
   level = 2;
-  break;
   case pos === 21||pos >= 21:
   level = 3;
-  break;
   case pos === 31||pos >= 31:
   level = 4;
   }
