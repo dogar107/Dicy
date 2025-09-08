@@ -31,7 +31,7 @@ const startBtn = document.getElementById("startBtn");
 const okBtn = document.getElementById("okBtn");
 const cancelBtn = document.getElementById("cancelBtn");
 const Level=document.getElementById("levelscore");
-const trapsPositions = [2,3,7,9,12,16,20,22,25,28,31,35,37,39];    
+const trapsPositions = [2,7,9,12,16,20,22,25,28,31,35,37,39];    
 
 
 const boxes = []; 
@@ -130,14 +130,9 @@ rollBtn.addEventListener("click", () => {
   scoreEl.textContent = "0";
   Level.textContent = "";
   gameStarted=false;
- 
-  setTimeout(()=>{
-  boxes[Pos].classList.remove("trap");
   resetGame();
   game.reset();
-  }, 1000)
   }
-  })
 
   if(position===41){
   showToast("Congratulations! You Win 🏆");
@@ -180,17 +175,18 @@ boxlist.appendChild(allBoxes[i]);
 function updateLevel(pos) {
   let level = 1;
 
-  if (pos === 35 || pos > 35) {
+  if (pos === 31 || pos > 31) {
     level = 4;
-  } else if (pos === 23 || pos > 23) {
+  }else if (pos === 21 || pos > 21 ) {
     level = 3;
-  } else if (pos === 11 || pos > 11) {
+  } else if (pos === 11 || pos > 11 ) {
     level = 2;
   }
 
   Level.textContent = level;
   updateVisibleBoxes(level, pos);
 }
+})
 function showToast(message) {
   const x = document.getElementById("snackbar");
   x.textContent = message;

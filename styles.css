@@ -473,7 +473,7 @@ position: relative;
 }
 
 .trap {
-background-color: red;
+border: 2px dashed red;
 }
 
 .footer{
