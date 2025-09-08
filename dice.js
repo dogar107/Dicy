@@ -52,7 +52,8 @@ customAlert1.style.display = "block";
 
 startBtn.onclick = () => {
   customAlert1.style.display = "none";
-  updateVisibleBoxes(1, position);
+
+  updateVisibleBoxes(1, pos);
 };
 
 quit.onclick = () => {
@@ -66,7 +67,7 @@ function resetGame() {
   gameStarted = false;
   scoreEl.textContent = "0";
   Level.textContent = "";
-  updateVisibleBoxes(1, position);
+  updateVisibleBoxes(1, pos);
 }
 resetbtn.addEventListener("click", resetGame);
 
@@ -79,7 +80,7 @@ rollBtn.addEventListener("click", () => {
       position = 0;
       scoreEl.textContent = "0";
       circleDiv.style.display = "block";
-      updateVisibleBoxes(1, position);
+      updateVisibleBoxes(1, pos);
     } else {
       for (let j = 0; j < 6; j++) {
         const el = document.getElementById(`dice${j}`);
@@ -179,38 +180,36 @@ function updateLevel(pos) {
  level = 4;
  }
  if(pos >= 31){
-  resetGame();
-  game.reset();
+ resetGame();
+ game.reset();
  showToast("Game Over!☠️");
-  scoreEl.textContent = "0";
-  Level.innerHTML = "";
-  gameStarted=false;
+ scoreEl.textContent = "0";
+ Level.textContent = "";
+ gameStarted=false;
  }
-
  if(pos === 21){
  level = 3;
  }
  if(pos >= 21){
-  resetGame();
-  game.reset();
+ resetGame();
+ game.reset();
  showToast("Game Over!☠️");
   scoreEl.textContent = "0";
   Level.textContent = "";
   gameStarted=false;
-  
  }
  
  if(pos === 11){
  level = 2;
  }
- if(pos >= 11){
+  if(pos >= 11){
   resetGame();
   game.reset();
- showToast("Game Over!☠️");
+  showToast("Game Over!☠️");
   scoreEl.textContent = "0";
   Level.innerHTML = "";
   gameStarted=false;
- }
+  }
   if(pos === 0){
   level = 1;
   }else{
