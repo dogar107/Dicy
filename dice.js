@@ -52,7 +52,6 @@ customAlert1.style.display = "block";
 
 startBtn.onclick = () => {
   customAlert1.style.display = "none";
-
   updateVisibleBoxes(1, position);
 };
 
@@ -79,7 +78,6 @@ rollBtn.addEventListener("click", () => {
       gameStarted = true;
       position = 0;
       scoreEl.textContent = "0";
-      Level.textContent = "1";
       circleDiv.style.display = "block";
       updateVisibleBoxes(1, position);
     } else {
@@ -175,15 +173,47 @@ boxlist.appendChild(allBoxes[i]);
 }
 
 
-function updateLevel(pos) {;
- let level = 1;
- if (pos === 31 || pos >= 31){
+function updateLevel(pos) {
+ let level = "";
+ if (pos === 31){
  level = 4;
- }else if(pos === 21 || pos >= 21){
+ }
+ if(pos >= 31){
+ resetGame();
+ game.reset();
+ showToast("Game Over!☠️");
+ scoreEl.textContent = "0";
+ Level.textContent = "";
+ gameStarted=false;
+ }
+ if(pos === 21){
  level = 3;
- }else if(pos === 11 || pos >= 11){
+ }
+ if(pos >= 21){
+ resetGame();
+ game.reset();
+ showToast("Game Over!☠️");
+  scoreEl.textContent = "0";
+  Level.textContent = "";
+  gameStarted=false;
+ }
+ 
+ if(pos === 11){
  level = 2;
  }
+  if(pos >= 11){
+  resetGame();
+  game.reset();
+  showToast("Game Over!☠️");
+  scoreEl.textContent = "0";
+  Level.innerHTML = "";
+  gameStarted=false;
+  }
+  if(pos === 0){
+  level = 1;
+  }else{
+  level="";
+  }
 
   Level.textContent = level;
   updateVisibleBoxes(level, pos);
