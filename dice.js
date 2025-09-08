@@ -123,7 +123,7 @@ rollBtn.addEventListener("click", () => {
 
 trapsPositions.forEach(Pos => {
   if (position === Pos) {
-    boxes[Pos].classList.add("trap");
+    boxes[Pos].classList.add("trap", "red");
     boxes[Pos].className="red";
     showToast("Oh no! You hit on trap!");
     circleDiv.style.display = "none";
